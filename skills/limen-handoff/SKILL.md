@@ -1,13 +1,13 @@
 ---
-name: dbk-handoff
-description: 总结当前会话的上下文与开发进度，生成标准化交接快照写入 .agent/handoff/ 并输出接手引导 Prompt，用于跨 AI Agent（Claude Code、Cursor、Windsurf、Antigravity、OpenHands、pi、opencode 等）或跨会话无缝接力。当用户要求生成交接文档、导出当前上下文、准备切换客户端或新开会话继续开发、做阶段性交接归档，或提到“交接”“handoff”“总结一下给下一个 agent 接着做”“换个窗口继续”时使用。不适用于在新会话中读取已有交接报告接手任务（应使用 dbk-pickup），也不适用于常规的 git commit message 生成、PR 描述撰写或普通代码总结。
+name: limen-handoff
+description: 总结当前会话的上下文与开发进度，生成标准化交接快照写入 .agent/handoff/ 并输出接手引导 Prompt，用于跨 AI Agent（Claude Code、Cursor、Windsurf、Antigravity、OpenHands、pi、opencode 等）或跨会话无缝接力。当用户要求生成交接文档、导出当前上下文、准备切换客户端或新开会话继续开发、做阶段性交接归档，或提到“交接”“handoff”“总结一下给下一个 agent 接着做”“换个窗口继续”时使用。不适用于在新会话中读取已有交接报告接手任务（应使用 limen-pickup），也不适用于常规的 git commit message 生成、PR 描述撰写或普通代码总结。
 license: MIT
 metadata:
   author: DBinK
   version: "0.3.0"
 ---
 
-# 上下文交接导出（dbk-handoff）
+# 上下文交接导出（limen-handoff）
 
 在当前会话结束或切换 AI 客户端前，将任务目标、核心工作集、已完成进展、踩坑记录与下一步待办沉淀为高密度交接快照，并输出可一键复制的引导 Prompt。
 
@@ -121,8 +121,8 @@ transcript: <transcript 绝对路径，客户端未暴露时省略本行>
 - **原会话记录**：<transcript 绝对路径，若客户端未暴露则省略本行>
 
 **接手要求**：
-1. 请先确认已安装 `dbk-pickup` skill，未安装时先运行 `npx skills add DBinK/dbk-handoff -g -y`。
-2. 调用 `dbk-pickup` 读取交接报告，用简短几句话向我汇报你理解的现状与下一步计划。
+1. 请先确认已安装 `limen-pickup` skill，未安装时先运行 `npx skills add Limen-AI-Lab/limen_handoff -g -y`。
+2. 调用 `limen-pickup` 读取交接报告，用简短几句话向我汇报你理解的现状与下一步计划。
 3. 原会话记录仅作兜底，只在报告细节缺失时按需局部检索，切勿全量读取。
 4. **汇报完毕后请直接暂停并等待我确认**，确认前禁止修改任何文件或执行非只读命令。
 

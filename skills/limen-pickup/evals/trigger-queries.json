@@ -1,10 +1,10 @@
 [
   {
-    "query": "我在使用另一个 AI 协助开发，现需要你接手该任务。请调用 dbk-pickup skill，交接报告路径：.agent/handoff/261018-1230-auth-refactor.md",
+    "query": "我在使用另一个 AI 协助开发，现需要你接手该任务。请调用 limen-pickup skill，交接报告路径：.agent/handoff/261018-1230-auth-refactor.md",
     "should_trigger": true
   },
   {
-    "query": "跑一下 dbk-pickup，接着上一个 agent 的进度往下做",
+    "query": "跑一下 limen-pickup，接着上一个 agent 的进度往下做",
     "should_trigger": true
   },
   {
@@ -16,7 +16,7 @@
     "should_trigger": true
   },
   {
-    "query": "用 dbk-pickup 恢复上下文，看看上个会话卡在哪了",
+    "query": "用 limen-pickup 恢复上下文，看看上个会话卡在哪了",
     "should_trigger": true
   },
   {
@@ -32,7 +32,7 @@
     "should_trigger": true
   },
   {
-    "query": "当前上下文太长了，跑一下 dbk-handoff 生成交接报告，我要换个窗口",
+    "query": "当前上下文太长了，跑一下 limen-handoff 生成交接报告，我要换个窗口",
     "should_trigger": false
   },
   {

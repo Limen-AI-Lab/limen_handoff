@@ -1,6 +1,6 @@
 [
   {
-    "query": "跑一下 dbk-handoff，我要换到 Cursor 里接着改这个模块",
+    "query": "跑一下 limen-handoff，我要换到 Cursor 里接着改这个模块",
     "should_trigger": true
   },
   {
@@ -24,7 +24,7 @@
     "should_trigger": true
   },
   {
-    "query": "执行 dbk-handoff 把当前任务状态存下来",
+    "query": "执行 limen-handoff 把当前任务状态存下来",
     "should_trigger": true
   },
   {
@@ -32,7 +32,7 @@
     "should_trigger": true
   },
   {
-    "query": "我在使用另一个 AI 协助开发，现需要你接手该任务。请调用 dbk-pickup 并读取 .agent/handoff/261018-1230-auth-refactor.md",
+    "query": "我在使用另一个 AI 协助开发，现需要你接手该任务。请调用 limen-pickup 并读取 .agent/handoff/261018-1230-auth-refactor.md",
     "should_trigger": false
   },
   {
@@ -40,7 +40,7 @@
     "should_trigger": false
   },
   {
-    "query": "用 dbk-pickup 恢复一下上个 agent 留下的进度",
+    "query": "用 limen-pickup 恢复一下上个 agent 留下的进度",
     "should_trigger": false
   },
   {

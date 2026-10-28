@@ -1,13 +1,13 @@
 ---
-name: dbk-pickup
-description: 读取 .agent/handoff/ 下的交接快照，校验协议版本与 Git 工作区状态，恢复任务上下文并向用户确认后继续开发。本技能是读取交接报告的唯一入口。当用户粘贴了交接引导 Prompt、要求接手上一个 Agent 或上一轮会话未完成的任务、让 Agent 读取 .agent/handoff/ 下的报告或 latest.md 继续干活，或提到“接手”“接着做”“pickup”“恢复上下文”时使用。不适用于在当前会话结束时总结进度并导出交接报告（应使用 dbk-handoff）。
+name: limen-pickup
+description: 读取 .agent/handoff/ 下的交接快照，校验协议版本与 Git 工作区状态，恢复任务上下文并向用户确认后继续开发。本技能是读取交接报告的唯一入口。当用户粘贴了交接引导 Prompt、要求接手上一个 Agent 或上一轮会话未完成的任务、让 Agent 读取 .agent/handoff/ 下的报告或 latest.md 继续干活，或提到“接手”“接着做”“pickup”“恢复上下文”时使用。不适用于在当前会话结束时总结进度并导出交接报告（应使用 limen-handoff）。
 license: MIT
 metadata:
   author: DBinK
   version: "0.3.0"
 ---
 
-# 上下文接手恢复（dbk-pickup）
+# 上下文接手恢复（limen-pickup）
 
 作为读取 `.agent/handoff/` 交接报告的唯一入口，按渐进式加载原则恢复任务上下文，校验协议版本与工作区 Git 状态，向用户汇报对齐并经确认后再继续推进任务。
 
@@ -18,7 +18,7 @@ metadata:
 按“显式指定优先、`latest.md` 兜底”的顺序读取报告：
 
 1. **显式指定**：若用户指令或引导 Prompt 中给出了具体的交接报告路径（如 `<workspace>/.agent/handoff/<YYMMDD>-<HHMM>-<task>.md`），直接读取该指定文件。
-2. **缺省兜底**：若用户未附带具体路径（如直接调用 `/dbk-pickup`），默认读取 `<workspace>/.agent/handoff/latest.md`。由于 `latest.md` 与权威快照内容完全一致，**读取后直接使用其正文即可，无需再次读取 `snapshot` 字段指向的同名快照文件**（`snapshot` 字段仅用于标识快照归属与汇报引用）。
+2. **缺省兜底**：若用户未附带具体路径（如直接调用 `/limen-pickup`），默认读取 `<workspace>/.agent/handoff/latest.md`。由于 `latest.md` 与权威快照内容完全一致，**读取后直接使用其正文即可，无需再次读取 `snapshot` 字段指向的同名快照文件**（`snapshot` 字段仅用于标识快照归属与汇报引用）。
 3. **缺失处理**：若指定文件或 `.agent/handoff/latest.md` 不存在，列出 `.agent/handoff/` 下已有的快照供用户选择，或告知用户当前工作区尚无交接报告。
 
 ### 2. 校验报告元数据（Frontmatter）

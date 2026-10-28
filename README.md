@@ -6,8 +6,8 @@
 
 | Skill | 功能 |
 | --- | --- |
-| `dbk-handoff` | 整理当前会话的任务目标、核心文件、已完成事项、已排除方案和下一步，生成交接快照及接手提示词。 |
-| `dbk-pickup` | 读取交接快照，核对 Git 工作区状态（如适用），简短汇报当前进度与下一步，默认等待用户确认后继续。 |
+| `limen-handoff` | 整理当前会话的任务目标、核心文件、已完成事项、已排除方案和下一步，生成交接快照及接手提示词。 |
+| `limen-pickup` | 读取交接快照，核对 Git 工作区状态（如适用），简短汇报当前进度与下一步，默认等待用户确认后继续。 |
 
 ## 安装与使用
 
@@ -15,10 +15,10 @@
 npx skills add Limen-AI-Lab/limen_handoff -g -y
 ```
 
-在支持 Agent Skills 的工具中安装后，对当前 AI 说“做个交接”，再把生成的提示词粘贴到新会话，让接手方使用 `dbk-pickup` 读取报告。
+在支持 Agent Skills 的工具中安装后，对当前 AI 说“做个交接”，再把生成的提示词粘贴到新会话，让接手方使用 `limen-pickup` 读取报告。
 
 交接文档保存在项目的 `.agent/handoff/` 中，包含独立快照与 `latest.md`。默认交接当前会话掌握的上下文，不会自动汇总整个项目的所有对话；多个会话请分别保存并引用各自快照。跨电脑使用时，需要一并传递相关项目文件与交接文档。
 
 ## 来源与许可
 
-本仓库收录自 [DBinK/dbk-handoff](https://github.com/DBinK/dbk-handoff) 的两个 Skill（v0.3.0），保留原技能名称与内容，另编写本中文简介。原作者为 DBinK，采用 [MIT License](LICENSE)。
+本仓库收录自 [DBinK/dbk-handoff](https://github.com/DBinK/dbk-handoff) 的两个 Skill（v0.3.0），将技能名称改为 `limen-handoff` 与 `limen-pickup`，同步调整调用引用并编写本中文简介，交接功能保持不变。原作者为 DBinK，采用 [MIT License](LICENSE)。
